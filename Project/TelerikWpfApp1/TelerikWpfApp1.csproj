@@ -88,7 +88,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MainWindow.g.i.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -105,7 +104,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowInsurance03.xaml">
+    <Page Include="View\WindowInsurance04.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,8 +118,8 @@
     <Compile Include="View\Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowInsurance03.xaml.cs">
-      <DependentUpon>WindowInsurance03.xaml</DependentUpon>
+    <Compile Include="View\WindowInsurance04.xaml.cs">
+      <DependentUpon>WindowInsurance04.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
