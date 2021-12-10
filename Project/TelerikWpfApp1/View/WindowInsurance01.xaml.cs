@@ -21,22 +21,12 @@ namespace TelerikWpfApp1
 
 
 
-    public partial class WindowInsurance01 : Window
+    public partial class WindowInsurance01 : UserControl
     {
 
         public WindowInsurance01()
         {
             InitializeComponent();
-        }
-        private void radButtonRefuse_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("다음에 하기 뒤에 이벤트");
-            //implement your logic here. 
-        }
-        private void radButtonAgree_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("접수신청 이벤트");
-            //implement your logic here. 
         }
     }
 }
