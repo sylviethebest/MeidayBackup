@@ -75,10 +75,12 @@
         <!--button-->
         <telerik:RadButton x:Name="radButtonBefore" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10"
-                    Content="이전" />
+                    Content="이전"
+                    Command="{Binding SwitchViewCommand}"
+                    CommandParameter="2"/>
         <telerik:RadButton x:Name="radButtonAfter" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2"
                     Command="{Binding SwitchViewCommand}"
-                    CommandParameter="0"
+                    CommandParameter="4"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10" 
                     Content="다음" />
     </Grid>

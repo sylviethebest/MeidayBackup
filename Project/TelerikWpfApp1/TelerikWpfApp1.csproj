@@ -100,8 +100,8 @@
     <Compile Include="View\WindowInsurance02.xaml.cs">
       <DependentUpon>WindowInsurance02.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window3.xaml.cs">
-      <DependentUpon>Window3.xaml</DependentUpon>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\Window2.xaml">
       <SubType>Designer</SubType>
@@ -111,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window3.xaml">
+    <Page Include="View\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +174,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo33.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\logo33.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
