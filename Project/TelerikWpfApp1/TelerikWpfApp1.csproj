@@ -103,6 +103,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\LoginCommand.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -182,13 +184,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MEIDAY.png" />
+    <Resource Include="Resource\MEIDAY.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img1.png" />
+    <Resource Include="Resource\img1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo33.gif" />
+    <Resource Include="Resource\logo33.gif" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

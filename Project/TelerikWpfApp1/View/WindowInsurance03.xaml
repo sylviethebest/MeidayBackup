@@ -11,7 +11,7 @@
         mc:Ignorable="d" 
         Height="800" Width="600">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Margin="0,15,0,0" Source="/MEIDAY.png"/>
+        <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Margin="0,15,0,0" Source="/Resource/MEIDAY.png"/>
         <Controls:RadTextBlock Content="보험금 청구" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Height="100" 
                    Margin="0,120,0,0" FontSize="34" FontWeight="Bold" TextWrapping="NoWrap"/>
         <Controls:RadTextBlock Margin="-380, 220,0,0" Content="홍길동" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
