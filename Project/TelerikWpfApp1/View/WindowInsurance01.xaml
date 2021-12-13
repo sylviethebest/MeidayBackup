@@ -80,11 +80,13 @@
                  IsReadOnly="True" Text="가나다" />
         <telerik:RadButton x:Name="radButtonRefuse" Grid.Row="15" Grid.Column="1"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10"
-                    Content="다음에 하기" />
+                    Content="다음에 하기"
+                    Command="{Binding SwitchViewCommand}"
+                    CommandParameter="0"/>
         <telerik:RadButton x:Name="radButtonAgree" Grid.Row="15" Grid.Column="2"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10"
                     Command="{Binding SwitchViewCommand}"
-                    CommandParameter="1"
+                    CommandParameter="3"
                     Content="접수 신청" />
     </Grid>
 </UserControl>

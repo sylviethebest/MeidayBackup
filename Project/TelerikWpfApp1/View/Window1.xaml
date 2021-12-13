@@ -25,15 +25,19 @@
         mc:Ignorable="d"
         Height="800" Width="600">
     <Grid>
-        <Image gif:ImageBehavior.AnimatedSource="/logo33.gif" Margin="0,120,0,0" Width="600" Height="600" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/logo33.gif"/>
+        <Grid.InputBindings>
+            <MouseBinding Gesture="LeftClick" Command="{Binding SwitchViewCommand}" CommandParameter="1"/>
+        </Grid.InputBindings>
+        <Image gif:ImageBehavior.AnimatedSource="/logo33.gif" Margin="0,100,0,0" Width="600" Height="600" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/logo33.gif"/>
         <!--Image x:Name="image1_1" HorizontalAlignment="Center" 
                VerticalAlignment="Top" Width="600" Height="600" 
                Source="/img1.png"/-->
         <!--cs코드에서 visibility 조절로 번갈아 띄우기?-->
-        <Image x:Name="image1_2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="200" Margin="0,0,0,-10" Source="/MEIDAY.png"/>
-        <TextBlock x:Name="textBlock1_1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="320" Height="80" FontSize="36" FontWeight="Bold" Margin="0,0,0,70" TextWrapping="NoWrap">
+        <Image x:Name="image1_2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="200" Margin="0,0,0,60" Source="/MEIDAY.png"/>
+        <TextBlock x:Name="textBlock1_1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="320" Height="80" FontSize="36" FontWeight="Bold" Margin="0,0,0,160" TextWrapping="NoWrap">
             화면을 <Run Foreground="#FF3648F4">터치</Run>하세요!
         </TextBlock>
+        <TextBlock x:Name="ForTouch" Width="600" Height="800"/>
     </Grid>
 </UserControl>
 
