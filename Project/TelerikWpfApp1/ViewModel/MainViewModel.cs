@@ -2,7 +2,7 @@
 
 namespace TelerikWpfApp1
 {
-    public class MainModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private int switchView;
         public int SwitchView
@@ -20,7 +20,7 @@ namespace TelerikWpfApp1
 
         public ICommand SwitchViewCommand { get; }
 
-        public MainModel()
+        public MainViewModel()
         {
             SwitchView = 0;
 

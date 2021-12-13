@@ -5,22 +5,22 @@
                 xmlns:local="clr-namespace:TelerikWpfApp1"
                 Title="MainWindow" Height="800" Width="600">
     <Window.DataContext>
-        <local:MainModel />
+        <local:MainViewModel />
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate x:Key="MainHomeTemplate" DataType="{x:Type local:MainModel}">
+        <DataTemplate x:Key="MainHomeTemplate" DataType="{x:Type local:MainViewModel}">
             <local:Window1 />
         </DataTemplate>
-        <DataTemplate x:Key="LoginTemplate" DataType="{x:Type local:MainModel}">
+        <DataTemplate x:Key="LoginTemplate" DataType="{x:Type local:MainViewModel}">
             <local:Window2 />
         </DataTemplate>
-        <DataTemplate x:Key="Insurance1Template" DataType="{x:Type local:MainModel}">
+        <DataTemplate x:Key="Insurance1Template" DataType="{x:Type local:MainViewModel}">
             <local:WindowInsurance01 />
         </DataTemplate>
-        <DataTemplate x:Key="Insurance2Template" DataType="{x:Type local:MainModel}">
+        <DataTemplate x:Key="Insurance2Template" DataType="{x:Type local:MainViewModel}">
             <local:WindowInsurance02 />
         </DataTemplate>
-        <DataTemplate x:Key="Insurance3Template" DataType="{x:Type local:MainModel}">
+        <DataTemplate x:Key="Insurance3Template" DataType="{x:Type local:MainViewModel}">
             <local:WindowInsurance03 />
         </DataTemplate>
     </Window.Resources>
