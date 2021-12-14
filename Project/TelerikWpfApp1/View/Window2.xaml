@@ -74,7 +74,7 @@
 
         <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
         HorizontalAlignment="Center" Margin="0,220,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-        Text="{Binding DisplayText}"
+        Text="{Binding DisplayText, Mode=OneWay}" 
         TextWrapping="NoWrap" VerticalAlignment="Top" 
         Width="340" Height="50" FontSize="20">
             <TextBox.Style>
