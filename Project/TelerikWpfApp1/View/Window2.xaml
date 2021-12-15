@@ -10,9 +10,19 @@
         mc:Ignorable="d"
         Height="800" Width="600">
     <UserControl.Resources>
-        <local:LoginViewModel x:Key="LoginViewModel"></local:LoginViewModel>
-        <local:MainViewModel x:Key="MainViewModel"></local:MainViewModel>
+        <local:LoginViewModel x:Key="LoginViewModel">
+        </local:LoginViewModel>
         <Style TargetType="{x:Type telerik:RadButton}" x:Key="MyBtnStyle1">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="DataContext" Value="{StaticResource LoginViewModel}"/>
+        </Style>
+        <Style TargetType="{x:Type telerik:RadButton}" x:Key="MyBtnStyle2">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="Width" Value="80"/>
@@ -31,7 +41,6 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="TextWrapping" Value="NoWrap"/>
         </Style>
-        
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -49,7 +58,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="90" />
         </Grid.RowDefinitions>
-        <telerik:RadButton x:Name="radButton1" Grid.Row="1" Grid.Column="1" Content="1" Style="{StaticResource MyBtnStyle1}" DataContext="{StaticResource LoginViewModel}" Command="{Binding Append}" CommandParameter="1" />
+        <telerik:RadButton x:Name="radButton1" Grid.Row="1" Grid.Column="1" Content="1" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="1" />
         <telerik:RadButton x:Name="radButton2" Grid.Row="1" Grid.Column="2" Content="2" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="2" />
         <telerik:RadButton x:Name="radButton3" Grid.Row="1" Grid.Column="3" Content="3" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="3" />
         <telerik:RadButton x:Name="radButton4" Grid.Row="2" Grid.Column="1" Content="4" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="4" />
@@ -60,8 +69,7 @@
         <telerik:RadButton x:Name="radButton9" Grid.Row="3" Grid.Column="3" Content="9" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="9" />
         <telerik:RadButton x:Name="radButtonDel" Grid.Row="4" Grid.Column="1" Content="정정" Style="{StaticResource MyBtnStyle1}" Command="{Binding BackSpace}" />
         <telerik:RadButton x:Name="radButton0" Grid.Row="4" Grid.Column="2" Content="0" Style="{StaticResource MyBtnStyle1}" Command="{Binding Append}" CommandParameter="0" />
-        <telerik:RadButton x:Name="radButtonOk" Grid.Row="4" Grid.Column="3" Content="확인" Style="{StaticResource MyBtnStyle1}"
-                           DataContext="{StaticResource MainViewModel}" Command="{Binding SwitchViewCommand}" CommandParameter="2"/>
+        <telerik:RadButton x:Name="radButtonOk" Grid.Row="4" Grid.Column="3" Content="확인" Style="{StaticResource MyBtnStyle2}" Command="{Binding SwitchViewCommand}" CommandParameter="2"/>
 
         <!--telerik:RadPasswordBox x:Name="radPasswordBox" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
         HorizontalAlignment="Center" Margin="0,220,0,0" Password="" TextWrapping="NoWrap" Text="RadPasswordBox" VerticalAlignment="Top" WatermarkContent="ex) 12345 또는 000000-1234567" 
@@ -69,7 +77,6 @@
         <TextBlock x:Name="textBlock1" Margin="0,130,0,0" Text="주민등록번호 또는 환자번호를" Style="{StaticResource MyTxtStyle1}"/>
         <TextBlock x:Name="textBlock2" Margin="0,170,0,0" Text="입력하세요" Style="{StaticResource MyTxtStyle1}"/>
         <Image x:Name="image" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Source="/Resource/MEIDAY.png"/>
-
 
         <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
         HorizontalAlignment="Center" Margin="0,220,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
