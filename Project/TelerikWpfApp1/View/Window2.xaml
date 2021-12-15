@@ -10,8 +10,7 @@
         mc:Ignorable="d"
         Height="800" Width="600">
     <UserControl.Resources>
-        <local:LoginViewModel x:Key="LoginViewModel">
-        </local:LoginViewModel>
+        <local:LoginViewModel x:Key="LoginViewModel"/>
         <Style TargetType="{x:Type telerik:RadButton}" x:Key="MyBtnStyle1">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top"/>

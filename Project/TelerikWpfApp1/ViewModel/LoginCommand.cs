@@ -12,7 +12,7 @@ namespace TelerikWpfApp1
         } 
         public bool CanExecute(object parameter) 
         { 
-            return true; 
+            return true;
         } 
         public void Execute(object parameter) 
         { 

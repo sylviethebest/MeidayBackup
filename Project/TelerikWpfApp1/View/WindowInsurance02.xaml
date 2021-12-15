@@ -45,9 +45,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,20"
                    FontWeight="Bold" FontSize="24"
                    Text="사고(발병)일"/>
-        <telerik:RadCalendar x:Name="accidentDateCalender" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Width="300" Margin="0,0,0,0">
-            
-        </telerik:RadCalendar>
+        <telerik:RadCalendar x:Name="accidentDateCalender" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Width="300" Margin="0,0,0,0" telerik:StyleManager.Theme="Office_Black"/>
         <!--accidentInsuredName-->
         <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
