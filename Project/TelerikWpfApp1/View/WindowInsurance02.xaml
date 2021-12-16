@@ -33,21 +33,9 @@
             <RowDefinition Height="200" />
             <RowDefinition Height="60" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="60" />
+            <RowDefinition Height="70" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="80" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="100" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -74,20 +62,20 @@
                     DisplayDateStart="{Binding AccidentLimitedDateTime}" DisplayDateEnd="{Binding AccidentTodayDateTime}" Margin="50,1,10,10"
                     FontSize="20" CalendarStyle="{StaticResource styleCalendar}"/>
         <!--accidentInsuredName-->
-        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,20,0,10"
+        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
                    Text="피보험자" />
-        <TextBox x:Name="ptname" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3"
+        <TextBox x:Name="ptname" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3"
                  IsReadOnly="True" Margin="10,20,0,62" Grid.RowSpan="2" 
                  HorizontalContentAlignment="Center" FontSize="24"
                  DataContext="{StaticResource AccidentViewModel}"
                  Text="{Binding AccidentPatientName}"/>
         <!--accidentType-->
-        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
                    Text="사고유형" />
         <!--radiobutton-->
-        <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center"
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center"
                     Margin="10,10,10,10" Orientation="Horizontal" Background="#34a8eb">
             <RadioButton x:Name="AccidentTypeDisease" GroupName="accidentType" Margin="30,10,30,10"
                          FontSize="20" FontWeight="Bold" 
@@ -106,12 +94,12 @@
                 교통사고</RadioButton>
         </StackPanel>
         <!--button-->
-        <telerik:RadButton x:Name="radButtonBefore" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"
+        <telerik:RadButton x:Name="radButtonBefore" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10"
                     Content="이전"
                     Command="{Binding SwitchViewCommand}"
                     CommandParameter="2"/>
-        <telerik:RadButton x:Name="radButtonAfter" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2"
+        <telerik:RadButton x:Name="radButtonAfter" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2"
                     Command="{Binding SwitchViewCommand}"
                     CommandParameter="4"
                     HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" Padding="50,10,50,10" 

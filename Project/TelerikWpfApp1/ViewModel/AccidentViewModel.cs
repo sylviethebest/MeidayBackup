@@ -88,5 +88,7 @@ namespace TelerikWpfApp1
                 OnPropertyChanged(nameof(AccidentTypeCar));
             }
         }
+
+
     }
 }

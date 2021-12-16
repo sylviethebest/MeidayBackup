@@ -63,7 +63,6 @@ namespace TelerikWpfApp1
             {
                 _isChecked = false;
             }
-            
         }
     }
 }
