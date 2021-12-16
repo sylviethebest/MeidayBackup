@@ -89,6 +89,26 @@ namespace TelerikWpfApp1
             }
         }
 
+        private string _insuranceCompany = "메리츠"; // = 이름
+        public string InsuranceCompanyName
+        {
+            get => _insuranceCompany;
+            set
+            {
+                _insuranceCompany = value;
+                OnPropertyChanged(nameof(InsuranceCompanyName));
+            }
+        }
 
+        private string _insuranceProduct = "실비보험"; // = 이름
+        public string InsuranceProduct
+        {
+            get => _insuranceProduct;
+            set
+            {
+                _insuranceProduct = value;
+                OnPropertyChanged(nameof(InsuranceProduct));
+            }
+        }
     }
 }

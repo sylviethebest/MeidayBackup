@@ -54,7 +54,7 @@
                              AutoGenerateColumns="False" ShowGroupPanel="False"
                              FontSize="20">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="  보험회사  "></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding InsuranceCompanyName}" Header="  보험회사  "></telerik:GridViewDataColumn>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding InsuranceProduct}" Header="  보험 상품명  "></telerik:GridViewDataColumn>
                 <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding IsChecked02}" Header="   선택   " AutoSelectOnEdit="True" EditTriggers="CellClick"></telerik:GridViewCheckBoxColumn>
             </telerik:RadGridView.Columns>

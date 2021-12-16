@@ -20,14 +20,25 @@ namespace TelerikWpfApp1
             }
         }
 
-        private bool _isChecked = false;
-        public bool IsChecked
+        private bool _isChecked01 = false;
+        public bool IsChecked01
         {
-            get => _isChecked;
+            get => _isChecked01;
             set
             {
-                _isChecked = value;
-                OnPropertyChanged("IsChecked");
+                _isChecked01 = value;
+                OnPropertyChanged("IsChecked01");
+            }
+        }
+
+        private bool _isChecked02 = false;
+        public bool IsChecked02
+        {
+            get => _isChecked02;
+            set
+            {
+                _isChecked02 = value;
+                OnPropertyChanged("IsChecked02");
             }
         }
 
@@ -43,7 +54,7 @@ namespace TelerikWpfApp1
         private void OnSwitchView(object index)
         {
             SwitchView = int.Parse(index.ToString());
-            if(SwitchView == 3 && _isChecked == false)
+            if(SwitchView == 3 && _isChecked01 == false)
             {
                 SwitchView = 2;
                 MessageBox.Show("개인정보 동의가 필요합니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -61,7 +72,12 @@ namespace TelerikWpfApp1
             }
             else if (SwitchView == 2)
             {
-                _isChecked = false;
+                _isChecked01 = false;
+            }
+            else if (SwitchView == 0 && IsChecked02 == true)
+            {
+                _isChecked02 = false;
+                MessageBox.Show("실비보험 청구서류가 안전하게 전달되었습니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
