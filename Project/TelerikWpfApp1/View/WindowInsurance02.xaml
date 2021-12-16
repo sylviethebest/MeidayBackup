@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:TelerikWpfApp1"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="TelerikWpfApp1.WindowInsurance02"
         mc:Ignorable="d"
-        Height="800" Width="600" FontSize="16">
+        Height="800" Width="600" FontSize="16" Background="White">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -42,32 +42,33 @@
                    TextAlignment="Center" FontSize="36" FontWeight="Bold"
                    Text="보험금 청구"/>
         <!--accidentDate-->
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,0,0,20"
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,55,20"
                    FontWeight="Bold" FontSize="24"
                    Text="사고(발병)일"/>
-        <telerik:RadCalendar x:Name="accidentDateCalender" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Width="300" Margin="0,0,0,0" telerik:StyleManager.Theme="Office_Black"/>
+        <DatePicker x:Name="accidentDate" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" SelectedDate="{Binding AccidentSelectedDateTime}"
+                    DisplayDateStart="{Binding AccidentLimitedDateTime}" DisplayDateEnd="{Binding AccidentTodayDateTime}" Margin="50,1,10,10"
+                    FontSize="20"/>
         <!--accidentInsuredName-->
-        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
                    Text="피보험자" />
-        <telerik:RadListBox x:Name="accidentInsuredName" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Width="300" >
-            <telerik:RadListBoxItem Content="accidentInsuredName"/>
-        </telerik:RadListBox>
+        <TextBox x:Name="ptname" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3"
+                 IsReadOnly="True" Margin="10,20,0,62" Grid.RowSpan="2" Text="{Binding AccidentPatientName}"/>
         <!--accidentType-->
         <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
                    Text="사고유형" />
         <!--radiobutton-->
         <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center"
-                    Margin="10,10,10,10" Orientation="Horizontal" Background="#FF3675FF">
-            <RadioButton x:Name="accidentTypeDisease" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" Background="White"  >
+                    Margin="10,10,10,10" Orientation="Horizontal" Background="#34a8eb">
+            <RadioButton x:Name="AccidentTypeDisease" GroupName="accidentType" Margin="30,10,30,10"
+                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeDisease}" >
                 질병</RadioButton>
-            <RadioButton x:Name="accidentTypeInjury" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" >
+            <RadioButton x:Name="AccidentTypeInjury" GroupName="accidentType" Margin="30,10,30,10"
+                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeInjury}">
                 상해</RadioButton>
-            <RadioButton x:Name="accidentTypeCar" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" >
+            <RadioButton x:Name="AccidentTypeCar" GroupName="accidentType" Margin="30,10,30,10"
+                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeCar}">
                 교통사고</RadioButton>
         </StackPanel>
         <!--button-->
