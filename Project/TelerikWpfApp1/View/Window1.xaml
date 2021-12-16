@@ -23,7 +23,7 @@
         xmlns:local="clr-namespace:TelerikWpfApp1"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Height="800" Width="600">
+        Height="800" Width="600" Background="White">
     <Grid>
         <Grid.InputBindings>
             <MouseBinding Gesture="LeftClick" Command="{Binding SwitchViewCommand}" CommandParameter="1"/>

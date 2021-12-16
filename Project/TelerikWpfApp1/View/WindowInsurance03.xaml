@@ -9,15 +9,52 @@
         xmlns:local="clr-namespace:TelerikWpfApp1"
         x:Class="TelerikWpfApp1.WindowInsurance03"
         mc:Ignorable="d" 
-        Height="800" Width="600">
+        Height="800" Width="600" Background="White">
     <Grid>
-        <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Margin="0,15,0,0" Source="/Resource/MEIDAY.png"/>
-        <Controls:RadTextBlock Content="보험금 청구" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="180" Height="100" 
-                   Margin="0,120,0,0" FontSize="34" FontWeight="Bold" TextWrapping="NoWrap"/>
-        <Controls:RadTextBlock Margin="-380, 220,0,0" Content="홍길동" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Controls:RadTextBlock Margin="-140, 220,0,0" Content="님의 보험 선택" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="dataGrid" Margin="0,270,0,0" VerticalAlignment="Top" Width="500" Height="200" FontWeight="SemiBold" FontSize="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" Height="200" Width="200" Source="/Resource/MEIDAY.png" VerticalAlignment="Top"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Bottom"
+                   TextAlignment="Center" FontSize="36" FontWeight="Bold" 
+                   Text="진료 기록"/>
+
+        <!-- TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" 
+                   TextAlignment="Center" FontSize="36" FontWeight="Bold" 
+                   Text="{Binding SampleDatas[0].Name}"/-->
+        <telerik:RadGridView Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="4" IsReadOnly="False" SelectionMode="Extended" SelectionUnit="FullRow"
+                             x:Name ="Patient_Record"  ItemsSource="{Binding Path= SampleDatas, Mode=TwoWay, NotifyOnSourceUpdated=True, NotifyOnTargetUpdated=True}" AutoGenerateColumns="False" ShowGroupPanel="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="이름" ></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Doctor}" Header="주치의"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Group}" Header="진료과"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Date}" Header="진료일"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Price}" Header="금액"></telerik:GridViewDataColumn>
+                <telerik:GridViewCheckBoxColumn DataMemberBinding="{Binding Checked}" Header="수납" AutoSelectOnEdit="True" EditTriggers="CellClick"></telerik:GridViewCheckBoxColumn>
+            </telerik:RadGridView.Columns>
+
+        </telerik:RadGridView>
+
+
+        <!--DataGrid x:Name="dataGrid" Margin="0,270,0,0" VerticalAlignment="Top" Width="500" Height="200" FontWeight="SemiBold" FontSize="24">
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalContentAlignment" Value="Center">
@@ -35,13 +72,8 @@
                 <DataGridTextColumn Header="보험 상품명" Width="200"></DataGridTextColumn>
                 <DataGridTextColumn Header="선택" Width="150"></DataGridTextColumn>
             </DataGrid.Columns>
-        </DataGrid>
-        <Controls:RadTextBlock Margin="-370,510,0,0" Content="전화번호" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Controls:RadTextBlock Margin="-240,560,0,0" Content="010-1234-5678" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Controls:RadLine X1="0" X2="440" Y1="0" Y2="0" Margin="0,0,0,-400" Stroke="Gray" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Margin="0,630,0,0" Width="370" Height="50"         
-        Text="보상진행 및 처리결과를 안내받을 전화번호를 입력해주세요"
-        TextWrapping="Wrap" TextAlignment="Center" FontSize="15" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </DataGrid-->
+        
         <telerik:RadButton x:Name="radButton10_1"
                            Content="다음" FontSize="16"
                            Width="180" Height="50" 

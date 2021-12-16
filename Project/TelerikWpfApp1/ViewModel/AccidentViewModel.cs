@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace TelerikWpfApp1.ViewModel
+namespace TelerikWpfApp1
 {
     public class AccidentViewModel : ViewModelBase
     {
@@ -17,7 +17,7 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentTodayDateTime = value;
-                NotifyPropertyChanged(nameof(AccidentTodayDateTime));
+                OnPropertyChanged(nameof(AccidentTodayDateTime));
             }
         }
 
@@ -28,7 +28,7 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentSelectedDateTime = value;
-                NotifyPropertyChanged(nameof(AccidentSelectedDateTime));
+                OnPropertyChanged(nameof(AccidentSelectedDateTime));
             }
         }
 
@@ -40,19 +40,19 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentLimitedDateTime = value;
-                NotifyPropertyChanged(nameof(AccidentLimitedDateTime));
+                OnPropertyChanged(nameof(AccidentLimitedDateTime));
             }
         }
 
         // 환자 이름 query문으로 넣기
-        private DateTime _accidentPatientName; // = 이름
-        public DateTime AccidentPatientName
+        private string _accidentPatientName = "홍길동"; // = 이름
+        public string AccidentPatientName
         {
             get => _accidentPatientName;
             set
             {
                 _accidentPatientName = value;
-                NotifyPropertyChanged(nameof(AccidentPatientName));
+                OnPropertyChanged(nameof(AccidentPatientName));
             }
         }
 
@@ -63,7 +63,7 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentTypeDisease = value;
-                NotifyPropertyChanged(nameof(AccidentTypeDisease));
+                OnPropertyChanged(nameof(AccidentTypeDisease));
             }
         }
 
@@ -74,7 +74,7 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentTypeInjury = value;
-                NotifyPropertyChanged(nameof(AccidentTypeInjury));
+                OnPropertyChanged(nameof(AccidentTypeInjury));
             }
         }
 
@@ -85,14 +85,8 @@ namespace TelerikWpfApp1.ViewModel
             set
             {
                 _accidentTypeCar = value;
-                NotifyPropertyChanged(nameof(AccidentTypeCar));
+                OnPropertyChanged(nameof(AccidentTypeCar));
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

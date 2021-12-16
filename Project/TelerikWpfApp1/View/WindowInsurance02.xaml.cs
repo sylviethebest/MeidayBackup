@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TelerikWpfApp1.ViewModel;
 
 namespace TelerikWpfApp1
 {
@@ -20,14 +19,9 @@ namespace TelerikWpfApp1
     /// </summary>
     public partial class WindowInsurance02 : UserControl
     {
-        private AccidentViewModel _viewModel;
         public WindowInsurance02()
         {
             InitializeComponent();
-
-            // View와 ViewModel을 연결시켜줍니다.
-            _viewModel = new AccidentViewModel();
-            this.DataContext = _viewModel;
         }
     }
 }

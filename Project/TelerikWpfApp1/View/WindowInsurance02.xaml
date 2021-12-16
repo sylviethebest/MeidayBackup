@@ -7,13 +7,35 @@
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="TelerikWpfApp1.WindowInsurance02"
         mc:Ignorable="d"
         Height="800" Width="600" FontSize="16" Background="White">
+    <UserControl.Resources>
+        <local:AccidentViewModel x:Key="AccidentViewModel"/>
+        <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Calendar}">
+                        <!-- Wrapping in ViewBox will enlarge calendar of that size.-->
+                        <Viewbox Width="250">
+                            <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="200" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="Auto" />
@@ -23,17 +45,18 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="100" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="60" />
         </Grid.ColumnDefinitions>
         <!--logo-->
         <Image Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Height="200" Width="200" Source="/Resource/MEIDAY.PNG" VerticalAlignment="Top"/>
@@ -45,15 +68,20 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,55,20"
                    FontWeight="Bold" FontSize="24"
                    Text="사고(발병)일"/>
-        <DatePicker x:Name="accidentDate" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" SelectedDate="{Binding AccidentSelectedDateTime}"
+        <DatePicker x:Name="accidentDate" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" 
+                    DataContext="{StaticResource AccidentViewModel}"
+                    SelectedDate="{Binding AccidentSelectedDateTime}"
                     DisplayDateStart="{Binding AccidentLimitedDateTime}" DisplayDateEnd="{Binding AccidentTodayDateTime}" Margin="50,1,10,10"
-                    FontSize="20"/>
+                    FontSize="20" CalendarStyle="{StaticResource styleCalendar}"/>
         <!--accidentInsuredName-->
         <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
                    Text="피보험자" />
         <TextBox x:Name="ptname" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3"
-                 IsReadOnly="True" Margin="10,20,0,62" Grid.RowSpan="2" Text="{Binding AccidentPatientName}"/>
+                 IsReadOnly="True" Margin="10,20,0,62" Grid.RowSpan="2" 
+                 HorizontalContentAlignment="Center" FontSize="24"
+                 DataContext="{StaticResource AccidentViewModel}"
+                 Text="{Binding AccidentPatientName}"/>
         <!--accidentType-->
         <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,20,0,10"
                    FontWeight="Bold" FontSize="24"
@@ -62,13 +90,19 @@
         <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center"
                     Margin="10,10,10,10" Orientation="Horizontal" Background="#34a8eb">
             <RadioButton x:Name="AccidentTypeDisease" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeDisease}" >
+                         FontSize="20" FontWeight="Bold" 
+                         DataContext="{StaticResource AccidentViewModel}"
+                         IsChecked="{Binding AccidentTypeDisease}" >
                 질병</RadioButton>
             <RadioButton x:Name="AccidentTypeInjury" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeInjury}">
+                         FontSize="20" FontWeight="Bold" 
+                         DataContext="{StaticResource AccidentViewModel}"
+                         IsChecked="{Binding AccidentTypeInjury}">
                 상해</RadioButton>
             <RadioButton x:Name="AccidentTypeCar" GroupName="accidentType" Margin="30,10,30,10"
-                         FontSize="20" FontWeight="Bold" IsChecked="{Binding AccidentTypeCar}">
+                         FontSize="20" FontWeight="Bold" 
+                         DataContext="{StaticResource AccidentViewModel}"
+                         IsChecked="{Binding AccidentTypeCar}">
                 교통사고</RadioButton>
         </StackPanel>
         <!--button-->

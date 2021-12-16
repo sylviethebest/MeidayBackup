@@ -59,10 +59,11 @@ namespace TelerikWpfApp1
                                 rad.Height = 150;
                                 rad.Show();*/
             }
-            if (SwitchView == 2)
+            else if (SwitchView == 2)
             {
                 _isChecked = false;
             }
+            
         }
     }
 }

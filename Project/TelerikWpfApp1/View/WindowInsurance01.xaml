@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TelerikWpfApp1"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="TelerikWpfApp1.WindowInsurance01"
         mc:Ignorable="d"
-        Height="800" Width="600" FontSize="16">
+        Height="800" Width="600" FontSize="16" Background="White">
     <UserControl.Resources>
         <local:ReadViewModel x:Key="ReadViewModel"/>
     </UserControl.Resources>
