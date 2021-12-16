@@ -57,7 +57,7 @@ namespace TelerikWpfApp1
             if(SwitchView == 3 && _isChecked01 == false)
             {
                 SwitchView = 2;
-                MessageBox.Show("개인정보 동의가 필요합니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("개인정보 처리 동의가 필요합니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
                 /*                RadWindow rad = new RadWindow();
                                 rad.Content = "개인정보 동의가 필요합니다.";
                                 rad.HorizontalAlignment = HorizontalAlignment.Center;
