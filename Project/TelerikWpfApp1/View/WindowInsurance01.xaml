@@ -10,7 +10,7 @@
     <UserControl.Resources>
         <local:ReadViewModel x:Key="ReadViewModel"/>
     </UserControl.Resources>
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />

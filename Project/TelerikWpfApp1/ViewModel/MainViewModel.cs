@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using System.Windows;
 using Telerik.Windows.Controls;
+using TelerikWpfApp1.View;
 
 namespace TelerikWpfApp1
 {
@@ -56,6 +57,7 @@ namespace TelerikWpfApp1
             SwitchView = int.Parse(index.ToString());
             if(SwitchView == 3 && _isChecked01 == false)
             {
+
                 SwitchView = 2;
                 MessageBox.Show("개인정보 처리 동의가 필요합니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
                 /*                RadWindow rad = new RadWindow();
