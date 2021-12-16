@@ -77,7 +77,7 @@
         <TextBlock x:Name="textBlock2" Margin="0,170,0,0" Text="입력하세요" Style="{StaticResource MyTxtStyle1}"/>
         <Image x:Name="image" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,15,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="200" Source="/Resource/MEIDAY.png"/>
 
-        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True"
         HorizontalAlignment="Center" Margin="0,220,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
         DataContext="{StaticResource LoginViewModel}"
         Text="{Binding DisplayText, Mode=OneWay}" 
